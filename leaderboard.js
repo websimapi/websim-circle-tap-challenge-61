@@ -309,6 +309,12 @@ export async function fetchLeaderboard(difficulty) {
     return rankedPlayers;
 }
 
+function getOrdinal(n) {
+    const s = ["th", "st", "nd", "rd"];
+    const v = n % 100;
+    return n + (s[(v - 20) % 10] || s[v] || s[0]);
+}
+
 export function renderLeaderboardList(rankedPlayers, currentPage = 1, itemsPerPage = 10) {
     const startIndex = (currentPage - 1) * itemsPerPage;
     const endIndex = startIndex + itemsPerPage;
@@ -317,6 +323,7 @@ export function renderLeaderboardList(rankedPlayers, currentPage = 1, itemsPerPa
     return playersOnPage.map((player, index) => {
         const overallIndex = startIndex + index;
         const rank = overallIndex + 1;
+        const rankText = getOrdinal(rank);
         const watchIcon = `<svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24"><path d="M8 5v14l11-7z"/></svg>`;
 
         const scoreListHtml = player.allScores.map((game, scoreIndex) => `
@@ -335,7 +342,7 @@ export function renderLeaderboardList(rankedPlayers, currentPage = 1, itemsPerPa
                 <div class="leaderboard-entry" data-index="${overallIndex}">
                     <div class="avatar-wrapper rank-${rank <= 3 ? rank : 'other'}">
                         <img class="avatar" src="https://images.websim.com/avatar/${player.username}" alt="${player.username}'s avatar">
-                        <div class="rank-badge">${rank}</div>
+                        <div class="rank-badge">${rankText}</div>
                     </div>
                     <div class="user-info">
                         <div class="username">${player.username}</div>
