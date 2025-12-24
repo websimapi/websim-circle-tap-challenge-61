@@ -477,11 +477,14 @@ button:active {
 
 .leaderboard-entry {
     display: grid;
-    grid-template-columns: auto 1fr auto auto;
+    grid-template-columns: auto 1fr auto;
+    grid-template-areas: 
+        "avatar user button"
+        "avatar score button";
     align-items: center;
-    gap: 12px;
-    padding: 10px;
-    padding-left: 15px; /* Shift pfp slightly right */
+    gap: 2px 12px;
+    padding: 12px;
+    padding-left: 15px;
     font-size: 1rem;
     cursor: pointer;
     border-radius: 8px;
@@ -495,12 +498,14 @@ button:active {
 }
 
 .avatar-wrapper {
+    grid-area: avatar;
     position: relative;
     width: 46px;
     height: 46px;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 8px;
 }
 
 .leaderboard-entry .avatar {
@@ -517,8 +522,8 @@ button:active {
 
 .rank-badge {
     position: absolute;
-    top: -8px; /* Shifted up to clear pfp */
-    left: -8px;
+    top: -18px;
+    left: -12px;
     min-width: 20px;
     height: 20px;
     padding: 0 5px;
@@ -541,9 +546,12 @@ button:active {
 .rank-3 .rank-badge { background: #CD7F32; color: #000; border-color: #CD7F32; }
 
 .user-info {
+    grid-area: user;
     display: flex;
     flex-direction: column;
-    overflow: hidden; /* Prevent long names from breaking layout */
+    overflow: hidden;
+    align-self: end;
+    margin-bottom: 2px;
 }
 
 .leaderboard-entry .username {
@@ -560,15 +568,18 @@ button:active {
 }
 
 .leaderboard-entry .score {
+    grid-area: score;
     font-weight: bold;
     font-size: 0.85rem;
     color: var(--accent-color);
-    margin-right: 2px;
+    margin-right: 0;
     display: flex;
-    flex-direction: column;
-    align-items: flex-end;
+    flex-direction: row;
+    justify-self: end;
+    align-self: start;
+    align-items: center;
+    gap: 12px;
     line-height: 1.2;
-    min-width: 60px;
 }
 
 .score-list-container {
@@ -617,6 +628,7 @@ button:active {
 }
 
 .watch-replay-btn.icon-only {
+    grid-area: button;
     width: 36px;
     height: 36px;
     padding: 8px;
