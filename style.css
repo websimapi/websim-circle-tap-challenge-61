@@ -464,7 +464,7 @@ button:active {
     max-width: 600px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 8px;
     flex-grow: 1; /* Allow list to take up space */
     min-height: 0; /* For flexbox proper sizing */
 }
@@ -482,9 +482,9 @@ button:active {
         "avatar user button"
         "avatar score button";
     align-items: center;
-    gap: 2px 12px;
-    padding: 12px;
-    padding-left: 15px;
+    gap: 0 10px;
+    padding: 8px 10px;
+    padding-left: 12px;
     font-size: 1rem;
     cursor: pointer;
     border-radius: 8px;
@@ -500,17 +500,17 @@ button:active {
 .avatar-wrapper {
     grid-area: avatar;
     position: relative;
-    width: 46px;
-    height: 46px;
+    width: 36px;
+    height: 36px;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 8px;
+    margin-top: 4px;
 }
 
 .leaderboard-entry .avatar {
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
     border: 2px solid transparent;
     object-fit: cover;
@@ -522,17 +522,17 @@ button:active {
 
 .rank-badge {
     position: absolute;
-    top: -18px;
-    left: -12px;
-    min-width: 20px;
-    height: 20px;
-    padding: 0 5px;
+    top: -10px;
+    left: -10px;
+    min-width: 16px;
+    height: 16px;
+    padding: 0 4px;
     background: #333;
-    border-radius: 10px; /* Pill shape for longer text */
+    border-radius: 8px;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 0.65rem;
+    font-size: 0.6rem;
     font-weight: bold;
     color: #fff;
     z-index: 2;
@@ -559,7 +559,7 @@ button:active {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    font-size: clamp(0.85rem, 4vw, 1rem);
+    font-size: 0.9rem;
 }
 
 .games-played {
@@ -570,7 +570,7 @@ button:active {
 .leaderboard-entry .score {
     grid-area: score;
     font-weight: bold;
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     color: var(--accent-color);
     margin-right: 0;
     display: flex;
@@ -578,7 +578,7 @@ button:active {
     justify-self: end;
     align-self: start;
     align-items: center;
-    gap: 12px;
+    gap: 8px;
     line-height: 1.2;
 }
 
@@ -604,8 +604,9 @@ button:active {
     justify-content: space-between;
     align-items: center;
     background-color: var(--secondary-color);
-    padding: 8px 12px;
+    padding: 6px 10px;
     border-radius: 6px;
+    font-size: 0.85rem;
 }
 
 .score-details {
@@ -629,9 +630,9 @@ button:active {
 
 .watch-replay-btn.icon-only {
     grid-area: button;
-    width: 36px;
-    height: 36px;
-    padding: 8px;
+    width: 32px;
+    height: 32px;
+    padding: 6px;
     border-radius: 50%;
     display: flex;
     align-items: center;
