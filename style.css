@@ -500,17 +500,17 @@ button:active {
 .avatar-wrapper {
     grid-area: avatar;
     position: relative;
-    width: 36px;
-    height: 36px;
+    width: 46px;
+    height: 46px;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 4px;
+    margin-top: 8px; /* Shift down some */
 }
 
 .leaderboard-entry .avatar {
-    width: 30px;
-    height: 30px;
+    width: 42px;
+    height: 42px;
     border-radius: 50%;
     border: 2px solid transparent;
     object-fit: cover;
@@ -522,8 +522,8 @@ button:active {
 
 .rank-badge {
     position: absolute;
-    top: -10px;
-    left: -10px;
+    top: -6px;
+    left: -8px;
     min-width: 16px;
     height: 16px;
     padding: 0 4px;
